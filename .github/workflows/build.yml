@@ -24,7 +24,7 @@ jobs:
             container_tag: centos-stream9
     steps:
       - name: Checkout repo
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+        uses: actions/checkout@v4
 
       - name: Fill in the AWS template
         run: |
@@ -32,8 +32,8 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_S3_BUCKET: majors-vmimport-bucket
-          AWS_DEFAULT_REGION: us-east-1
+          AWS_S3_BUCKET: brokenbluesky-vmimport-bucket
+          AWS_DEFAULT_REGION: us-west-2
           IMAGE_KEY: "${{ matrix.blueprint }}-${{ github.run_id }}"
 
       - name: Run the build
