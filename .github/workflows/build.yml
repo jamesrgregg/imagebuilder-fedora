@@ -20,11 +20,11 @@ jobs:
         include:
           - blueprint: fedora-imagebuilder
             container_tag: fedora-latest
-          - blueprint: centos-minimal
-            container_tag: centos-stream9
+          # - blueprint: centos-minimal
+          #   container_tag: centos-stream9
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
 
       - name: Fill in the AWS template
         run: |
